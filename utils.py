@@ -2,12 +2,20 @@ from consolemenu import *
 from consolemenu.format import *
 from consolemenu.items import *
 import datetime
+import os.path
 
 formatter = MenuFormatBuilder().set_title_align('center').set_subtitle_align('center').set_border_style_type(MenuBorderStyleType.DOUBLE_LINE_BORDER).show_prologue_top_border(True)
 
-#open vim
+#copy template to solution file if template available, open vim
 def getOptionOne(dir, name):
-    command = f'vim ./problems/{dir}/{name}/solution.py'
+    command  = None
+    basePath = f'./problems/{dir}/{name}'
+    templatePath = f'{basePath}/template.py'
+    solutionPath = f'{basePath}/solution.py'
+    if os.path.exists(templatePath):
+        command = f'cp {templatePath} {solutionPath} && vim {solutionPath}'
+    else:
+        command = f'vim {solutionPath}'
     return CommandItem("Create/Edit Solution",command)
 
 #test solution
@@ -24,3 +32,4 @@ def getOptionThree(dir, name):
     newPath = f'./archive/{newFileName}.py'
     command = f'mv ./problems/{dir}/{name}/solution.py {newPath} && echo "Moved file to {newPath}" && sleep 3'
     return CommandItem("Archive Solution", command)
+
