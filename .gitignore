@@ -1,3 +1,5 @@
-./solutions/*
+**/archive
 
-./archive/*
+**/__pycache
+
+*.pyc

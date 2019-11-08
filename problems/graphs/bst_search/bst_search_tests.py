@@ -1,7 +1,5 @@
 import sys
-sys.path.insert(1, '../../solutions/graphs')
-
-import bst_search
+import solution
 import unittest
 
 class BST:
@@ -32,37 +30,37 @@ test = BST(100).insert(5).insert(15).insert(5).insert(2).insert(1).insert(22) \
 class TestProgram(unittest.TestCase):
 
 	def test_case_1(self):
-		self.assertEqual(bst_search.findClosestValueInBst(test, 100), 100)
+		self.assertEqual(solution.findClosestValueInBst(test, 100), 100)
 
 	def test_case_2(self):
-		self.assertEqual(bst_search.findClosestValueInBst(test, 208), 208)
+		self.assertEqual(solution.findClosestValueInBst(test, 208), 208)
 
 	def test_case_3(self):
-		self.assertEqual(bst_search.findClosestValueInBst(test, 4500), 4500)
+		self.assertEqual(solution.findClosestValueInBst(test, 4500), 4500)
 
 	def test_case_4(self):
-		self.assertEqual(bst_search.findClosestValueInBst(test, 4501), 4500)
+		self.assertEqual(solution.findClosestValueInBst(test, 4501), 4500)
 
 	def test_case_5(self):
-		self.assertEqual(bst_search.findClosestValueInBst(test, -70), -51)
+		self.assertEqual(solution.findClosestValueInBst(test, -70), -51)
 
 	def test_case_6(self):
-		self.assertEqual(bst_search.findClosestValueInBst(test, 2000), 1001)
+		self.assertEqual(solution.findClosestValueInBst(test, 2000), 1001)
 
 	def test_case_7(self):
-		self.assertEqual(bst_search.findClosestValueInBst(test, 6), 5)
+		self.assertEqual(solution.findClosestValueInBst(test, 6), 5)
 
 	def test_case_8(self):
-		self.assertEqual(bst_search.findClosestValueInBst(test, 30000), 55000)
+		self.assertEqual(solution.findClosestValueInBst(test, 30000), 55000)
 
 	def test_case_9(self):
-		self.assertEqual(bst_search.findClosestValueInBst(test, -1), 1)
+		self.assertEqual(solution.findClosestValueInBst(test, -1), 1)
 
 	def test_case_10(self):
-		self.assertEqual(bst_search.findClosestValueInBst(test, 29751), 55000)
+		self.assertEqual(solution.findClosestValueInBst(test, 29751), 55000)
 
 	def test_case_11(self):
-		self.assertEqual(bst_search.findClosestValueInBst(test, 29749), 4500)
+		self.assertEqual(solution.findClosestValueInBst(test, 29749), 4500)
 
 
 if __name__ == "__main__":
