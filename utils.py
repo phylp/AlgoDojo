@@ -21,7 +21,7 @@ def getOptionOne(dir, name):
 #test solution
 def getOptionTwo(dir, name):
     directory = f'./problems/{dir}/{name}'
-    command = f'rm -rf {directory}/__pycache__ && python {directory}/{name}_tests.py && sleep 5'
+    command = f'rm -rf {directory}/__pycache__ && python {directory}/{name}_tests.py 2> test.txt && cat test.txt && sleep 3'
     return CommandItem("Test Solution",command)
 
 #rename file and move it to archive
